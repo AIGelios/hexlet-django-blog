@@ -1,4 +1,9 @@
-<a href="/">Домашняя страница</a>
-<hr>
-<p>Полное название приложения:</p>
-<h1>{{ name }}</h1>
+<!-- hexlet_django_blog/templates/articles/articles.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Статьи{% endblock %}
+
+{% block content %}
+    <hr><h3 align="center">Статьи</h1><hr>
+{% endblock %}
