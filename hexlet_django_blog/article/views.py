@@ -1,14 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from hexlet_django_blog.views import HomepageView
 # from django.http import HttpResponse
 # Create your views here.
 
 
-def index(request):
+def article(request, tags, article_id):
     return render(
         request,
         'articles/articles.html',
-        context={'name': __name__}
+        context={'body': f'Статья номер {article_id}. Тег {tags}'}
     )
 
 
