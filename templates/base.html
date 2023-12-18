@@ -3,20 +3,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}Django на Хекслете{% endblock %}</title>
+    <title>{% block title %}Эксперименты с Django на Хекслете{% endblock %}</title>
 </head>
 <body>
-<div id="sidebar">
-    {% block sidebar %}
-        <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/articles/">Статьи</a></li>
-            <li><a href="/about/">О блоге</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        <a class="nav-link" href="/">Главная</a>
+        <a class="nav-link" href="/articles/">Статьи</a>
+        <a class="nav-link" href="/about/">О блоге</a>
+        <a class="nav-link" href="/admin/">Администратор</a>
+        {% block sidebar %}
+        {% endblock %}
         </ul>
-    {% endblock %}
-</div>
+    </div>
+</nav>
 <div id="content">
+    <hr>
     {% block content %}{% endblock %}
+    <hr>
 </div>
 </body>
 </html>

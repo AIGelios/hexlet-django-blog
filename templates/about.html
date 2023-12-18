@@ -2,12 +2,10 @@
 
 {% extends "base.html" %}
 
-{% block title %}Эксперименты с Django на Хекслете{% endblock %}
+{% block title %}Эксперименты с Django на Хекслете (О сайте){% endblock %}
 
 {% block content %}
-    <hr>
     <h1 align="center">О блоге</h1>
-    <hr>
-    <p>Эксперименты с Django на Хекслете</p>
+    <p align="center">На этом сайте оттачиваются навыки работы с фреймворком Django в обучающем курсе Hexlet</p>
     <p>{{ tags|join:', ' }}</p>
 {% endblock %}

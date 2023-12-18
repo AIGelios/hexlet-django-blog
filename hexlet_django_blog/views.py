@@ -16,7 +16,11 @@ class HomepageView(TemplateView):
 
 
 def homepage(request):
-    return redirect(reverse('article', kwargs={'tags': 'python', 'article_id': 42}))
+    return redirect(reverse(
+        'article',
+        kwargs={'tags': 'python', 'article_id': 42}
+        )
+    )
 
 
 def about(request):
