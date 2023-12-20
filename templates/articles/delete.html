@@ -1,0 +1,8 @@
+<br>
+<form action="{% url 'articles_delete' id=article.id %}" 
+method="post"
+align="center"
+onsubmit="return confirm('Удалить статью безвозвратно?')">
+    {% csrf_token %}
+    <input type="submit" value="Удалить статью &quot{{ article.name }}&quot ({{ article.timestamp }})">
+</form>

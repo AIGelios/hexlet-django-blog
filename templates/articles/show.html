@@ -4,5 +4,10 @@
 
 {% block content %}
     <h1 align="center">{{ article.name }} (Опубликовано {{ article.timestamp }})</h1>
-    <article>{{ article.body }}</article>
+    <a href="{% url 'articles_update' id=article.id %}">Редактировать статью</a>
+    <form action="{% url 'articles_delete' article.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить cтатью">
+    </form>
+    {{ article.body }}
 {% endblock %}
