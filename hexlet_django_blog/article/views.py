@@ -75,7 +75,7 @@ class ArticleFormEditView(View):
             form.save()
             return redirect('articles_index')
         return render(request, 'articles/update.html', {'form': form, 'article_id':article_id})
-    
+
 
 class ArticleFormDeleteView(View):
     def get(self, request, *args, **kwargs):
@@ -83,7 +83,7 @@ class ArticleFormDeleteView(View):
         return render(request, 'articles/delete.html', {'article': article})
 
     def post(self, request, *args, **kwargs):
-        article = article = get_object_or_404(Article, id=kwargs.get('id', 0))
+        article = get_object_or_404(Article, id=kwargs.get('id', 0))
         if article:
             article.delete()
         return redirect('articles_index')
